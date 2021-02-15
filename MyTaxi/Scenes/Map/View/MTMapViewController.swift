@@ -133,8 +133,6 @@ class MTMapViewController: UIViewController, PulleyPrimaryContentControllerDeleg
             .disposed(by: disposeBag)
     }
     
-    //MARK: MapKit
-    
 }
 
 //MARK: - Map Protocol
@@ -147,7 +145,7 @@ extension MTMapViewController: MTMapProtocol {
     }
 }
 
-private extension MKMapView {
+extension MKMapView {
     
     func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
         

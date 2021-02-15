@@ -31,6 +31,10 @@ extension MTVehicleDetailsAdapter: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MTVehicleTableViewCell", for: indexPath) as! MTVehicleTableViewCell
         
+        let vehicle = delegate.getVehicle(at: indexPath)
+        
+        cell.labelType.text = vehicle.type?.rawValue
+        
         return cell
     }
 }
@@ -39,5 +43,7 @@ extension MTVehicleDetailsAdapter: UITableViewDataSource {
 extension MTVehicleDetailsAdapter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        delegate.itemSelected(at: indexPath)
     }
 }

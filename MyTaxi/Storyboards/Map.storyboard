@@ -127,31 +127,11 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjv-kt-Omu">
-                                                            <rect key="frame" x="16" y="39.5" width="266" height="21"/>
+                                                            <rect key="frame" x="16" y="39.5" width="382" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U10-br-rza" customClass="MTButton" customModule="MyTaxi" customModuleProvider="target">
-                                                            <rect key="frame" x="298" y="26" width="100" height="48"/>
-                                                            <color key="backgroundColor" name="primary"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="WOb-dF-4eW"/>
-                                                                <constraint firstAttribute="height" constant="48" id="yRY-xl-up4"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                            <state key="normal" title="Navigate">
-                                                                <color key="titleColor" name="textSecondary"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                    <color key="value" name="primary"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="4"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8i-WN-4Sb">
                                                             <rect key="frame" x="0.0" y="99" width="414" height="1"/>
                                                             <color key="backgroundColor" name="separatorPrimary"/>
@@ -162,19 +142,16 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="U10-br-rza" firstAttribute="leading" secondItem="cjv-kt-Omu" secondAttribute="trailing" constant="16" id="5Rh-M2-KAY"/>
                                                         <constraint firstItem="cjv-kt-Omu" firstAttribute="centerY" secondItem="dt8-8G-Fao" secondAttribute="centerY" id="7CS-q5-tVS"/>
-                                                        <constraint firstItem="U10-br-rza" firstAttribute="centerY" secondItem="cjv-kt-Omu" secondAttribute="centerY" id="SqB-b2-0Sz"/>
                                                         <constraint firstItem="E8i-WN-4Sb" firstAttribute="leading" secondItem="dt8-8G-Fao" secondAttribute="leading" id="e37-2a-YEb"/>
                                                         <constraint firstItem="cjv-kt-Omu" firstAttribute="leading" secondItem="dt8-8G-Fao" secondAttribute="leading" constant="16" id="eTn-tp-owQ"/>
                                                         <constraint firstAttribute="trailing" secondItem="E8i-WN-4Sb" secondAttribute="trailing" id="l1t-uY-anx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cjv-kt-Omu" secondAttribute="trailing" constant="16" id="lmS-Gk-tT4"/>
                                                         <constraint firstAttribute="bottom" secondItem="E8i-WN-4Sb" secondAttribute="bottom" id="oZf-ha-JuY"/>
-                                                        <constraint firstAttribute="trailing" secondItem="U10-br-rza" secondAttribute="trailing" constant="16" id="vmU-Nh-EUV"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <outlet property="buttonNavigate" destination="U10-br-rza" id="Rpz-5W-kS6"/>
                                                     <outlet property="labelType" destination="cjv-kt-Omu" id="6xo-nU-1k4"/>
                                                 </connections>
                                             </tableViewCell>
@@ -242,20 +219,9 @@
             <point key="canvasLocation" x="334.78260869565219" y="278.57142857142856"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="U10-br-rza">
-            <size key="intrinsicContentSize" width="64" height="30"/>
-        </designable>
-    </designables>
     <resources>
-        <namedColor name="primary">
-            <color red="0.0" green="0.44299998879432678" blue="0.80800002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="separatorPrimary">
             <color red="0.84700000286102295" green="0.84700000286102295" blue="0.84700000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="textSecondary">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

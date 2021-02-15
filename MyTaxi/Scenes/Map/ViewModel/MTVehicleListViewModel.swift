@@ -18,6 +18,14 @@ class TPVehicleListViewModel {
     let isLoading = BehaviorRelay<Bool>(value: true)
     var selectedVehicle: Vehicle?
     
+    var selectedAnnotation = MKPointAnnotation() {
+        
+        didSet {
+            
+            
+        }
+    }
+        
     lazy var annotations: [MKPointAnnotation] = {
         
         return [MKPointAnnotation]()
@@ -27,6 +35,7 @@ class TPVehicleListViewModel {
         
         return VehicleList()
     }()
+    
     
     //MARK: - Initializer
     init(vehicleServiceProtocol: VehicleServiceProtocol = VehicleService()) {

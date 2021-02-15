@@ -7,6 +7,7 @@
 
 import UIKit
 import Pulley
+import MapKit
 import RxSwift
 import RxCocoa
 
@@ -30,14 +31,6 @@ class MTVehicleDetailsViewController: UIViewController {
         
         return TPVehicleListViewModel()
     }()
-    
-//    public var vehicles = [Vehicle]() {
-//        
-//        didSet {
-//            
-//            setupTableView()
-//        }
-//    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -83,10 +76,19 @@ extension MTVehicleDetailsViewController: MTVehicleDetailsProtocol {
     
     func getVehicle(at indexPath: IndexPath) -> Vehicle {
         
-        return Vehicle()
+        return viewModel.getVehicle(at: indexPath)
     }
     
     func itemSelected(at indexPath: IndexPath) {
+                
+        viewModel.selectedAnnotation = viewModel.annotations[indexPath.row]
         
+        if let mapViewController = pulleyViewController?.primaryContentViewController as? MTMapViewController {
+            
+            let region = MKCoordinateRegion(center: viewModel.selectedAnnotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                        
+            mapViewController.mapView.setRegion(region, animated: true)
+            
+        }
     }
 }
