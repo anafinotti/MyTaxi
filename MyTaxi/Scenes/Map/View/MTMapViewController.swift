@@ -16,7 +16,6 @@ class MTMapViewController: UIViewController, PulleyPrimaryContentControllerDeleg
     //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Properties
     var adapter: MTMapAdapter!
@@ -36,21 +35,70 @@ class MTMapViewController: UIViewController, PulleyPrimaryContentControllerDeleg
         
         adapter = MTMapAdapter(delegate: self)
         
-        tableView.delegate = adapter
-        tableView.dataSource = adapter
-        
-        self.setupViewModel()
+        setupViewModel(p2Lat: 53.394655, p1Lon: 9.757589, p1Lat: 53.694865, p2Lon: 10.099891)
+        setupInitialLocation()
     }
     
-    func setupViewModel() {
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        self.pulleyViewController?.displayMode = .automatic
+        self.pulleyViewController?.setDrawerPosition(position: .closed, animated: false)
+    }
+    
+    //MARK: Layout
+    func setupViewModel(p2Lat: Double, p1Lon: Double, p1Lat: Double, p2Lon: Double) {
         
         viewModel.isLoading
             .bind(to: activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
         
-        self.viewModel.isLoading.accept(true)
+        viewModel.isLoading.accept(true)
         
-        fetchVehicleList(p2Lat: 53.394655, p1Lon: 9.757589, p1Lat: 53.694865, p2Lon: 10.099891)
+        fetchVehicleList(p2Lat: p2Lat, p1Lon: p1Lon, p1Lat: p1Lat, p2Lon: p2Lon)
+    }
+    
+    func setupInitialLocation() {
+        
+        let initialLocation = CLLocation(latitude: 53.551864495081674, longitude: 10.000942264594983)
+        mapView.centerToLocation(initialLocation)
+        
+        let center = CLLocation(latitude: 53.551864495081674, longitude: 10.000942264594983)
+        let region = MKCoordinateRegion(
+            center: center.coordinate,
+            latitudinalMeters: 50000,
+            longitudinalMeters: 60000)
+        mapView.setCameraBoundary(
+            MKMapView.CameraBoundary(coordinateRegion: region),
+            animated: true)
+        
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 200000)
+        mapView.setCameraZoomRange(zoomRange, animated: true)
+        
+        mapView.delegate = adapter
+    }
+    
+    func didFetchVehicles(vehicles: [Vehicle]) {
+        
+        viewModel.isLoading.accept(false)
+        activityIndicator.isHidden = true
+        
+        pulleyViewController?.setDrawerPosition(position: .partiallyRevealed, animated: true)
+        pulleyViewController?.animationDuration = 0.5
+        
+        mapView.removeAnnotations(mapView.annotations)
+        
+        mapView.addAnnotations(viewModel.annotations)
+        mapView.delegate = adapter
+        
+        pulleyViewController?.loadViewIfNeeded()
+        
+        if let detailsViewController = pulleyViewController?.drawerContentViewController as? MTVehicleDetailsViewController {
+            
+            detailsViewController.viewModel = viewModel
+            detailsViewController.tableView.reloadData()
+        }
     }
     
     //MARK: ViewModel
@@ -63,7 +111,10 @@ class MTMapViewController: UIViewController, PulleyPrimaryContentControllerDeleg
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { response in
                 
-                self.tableView.reloadData()
+                if let vehicles = response.vehicles {
+                    
+                    self.didFetchVehicles(vehicles: vehicles)
+                }
                 
             }, onError: { error in
                 
@@ -81,10 +132,35 @@ class MTMapViewController: UIViewController, PulleyPrimaryContentControllerDeleg
             })
             .disposed(by: disposeBag)
     }
+    
+    //MARK: MapKit
+    
 }
 
 //MARK: - Map Protocol
 extension MTMapViewController: MTMapProtocol {
     
-    
+    func loadVehicleList(lat1: Double, long1: Double, lat2: Double, long2: Double) {
+        
+        setupViewModel(p2Lat: lat2, p1Lon: long1, p1Lat: lat1, p2Lon: long2)
+
+    }
 }
+
+private extension MKMapView {
+    
+    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
+        
+        let coordinateRegion = MKCoordinateRegion(
+            center: location.coordinate,
+            latitudinalMeters: regionRadius,
+            longitudinalMeters: regionRadius)
+        setRegion(coordinateRegion, animated: true)
+    }
+}
+
+
+
+
+
+

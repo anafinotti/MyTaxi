@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Pulley
+import MapKit
 
 class MTMapAdapter: NSObject {
     
@@ -17,33 +17,47 @@ class MTMapAdapter: NSObject {
         
         self.delegate = delegate
     }
-}
-
-//MARK: TableView Datasource
-extension MTMapAdapter: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func deg2rad(degrees:Double) -> Double {
         
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return UITableViewCell()
+        return degrees * Double.pi / 180
     }
 }
 
-//MARK: TableView Delegate
-extension MTMapAdapter: UITableViewDelegate {
+extension MTMapAdapter: MKMapViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
+        let pin = mapView.view(for: annotation) ?? MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
         
+        if annotation is MKPointAnnotation {
+            
+            pin.image = UIImage(named: "taxi")
+            pin.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            
+            let mapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 48, height: 48)))
+            mapsButton.setBackgroundImage(#imageLiteral(resourceName: "Map"), for: .normal)
+            
+            pin.rightCalloutAccessoryView = mapsButton
+            
+            pin.canShowCallout = true
+            pin.calloutOffset = CGPoint(x: -5, y: 5)
+            return pin
+        }
+        
+        return nil
     }
-}
-
-//MARK: Pulley Delegate
-extension MTMapAdapter: PulleyPrimaryContentControllerDelegate {
     
-    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        let searchDistance: Double =  5.00
+        
+        let lat1 = mapView.centerCoordinate.latitude - (searchDistance / 69)
+        let lat2 = mapView.centerCoordinate.latitude + (searchDistance / 69)
+        
+        let long1 = mapView.centerCoordinate.longitude - searchDistance / fabs(cos(deg2rad(degrees: mapView.centerCoordinate.latitude))*69)
+        let long2 = mapView.centerCoordinate.longitude + searchDistance / fabs(cos(deg2rad(degrees: mapView.centerCoordinate.latitude))*69)
+        
+        delegate.loadVehicleList(lat1: lat1, long1: long1, lat2: lat2, long2: long2)
+    }
 }

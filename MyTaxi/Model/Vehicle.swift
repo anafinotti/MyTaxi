@@ -36,17 +36,15 @@ struct VehicleList: Codable {
 struct Vehicle: Codable {
     
     let id: Double?
-    let latitude: Double?
-    let longitude: Double?
+    let coordinate: Coordinate?
     let state: State?
     let type: Type?
     let heading: Double?
     
-    init(id: Double? = nil, latitude: Double? = nil, longitude: Double? = nil, state: State? = nil, type: Type? = nil, heading: Double? = nil) {
+    init(id: Double? = nil, coordinate: Coordinate? = nil, state: State? = nil, type: Type? = nil, heading: Double? = nil) {
         
         self.id = id
-        self.latitude = latitude
-        self.longitude = longitude
+        self.coordinate = coordinate
         self.state = state
         self.type = type
         self.heading = heading

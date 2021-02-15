@@ -10,6 +10,8 @@ import UIKit
 class MTVehicleTableViewCell: UITableViewCell {
     
     //MARK: - Outlets
+    @IBOutlet weak var labelType: UILabel!
+    @IBOutlet weak var buttonNavigate: UIButton!
     
     //MARK: - Properties
     

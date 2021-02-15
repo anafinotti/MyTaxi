@@ -20,6 +20,17 @@
 		0C04EB3225D8C5A100BD0FA8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C04EB2C25D8C5A100BD0FA8 /* ApiClient.swift */; };
 		0C04EB3325D8C5A100BD0FA8 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C04EB2D25D8C5A100BD0FA8 /* ApiRouter.swift */; };
 		0C04EB4125D8C77C00BD0FA8 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C04EB4025D8C77C00BD0FA8 /* Vehicle.swift */; };
+		0C07639225DADB7900EAA9F5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07639125DADB7900EAA9F5 /* Coordinate.swift */; };
+		0C1441BE25D9D34300383E38 /* MTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1441BD25D9D34300383E38 /* MTView.swift */; };
+		0C1441C325D9D3D200383E38 /* MTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1441C225D9D3D200383E38 /* MTButton.swift */; };
+		0C1441C925D9DC3F00383E38 /* MTFakeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1441C825D9DC3F00383E38 /* MTFakeSelectionButton.swift */; };
+		0C1441CE25D9DDED00383E38 /* MTVehicleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1441CD25D9DDED00383E38 /* MTVehicleDetailsViewController.swift */; };
+		0C1441D425D9DE3300383E38 /* MTVehicleDetailsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1441D325D9DE3300383E38 /* MTVehicleDetailsAdapter.swift */; };
+		0C1441E025D9DE8200383E38 /* MTVehicleDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1441DF25D9DE8200383E38 /* MTVehicleDetailsProtocol.swift */; };
+		0C1441E925D9DEE700383E38 /* MTVehicleDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1441E825D9DEE700383E38 /* MTVehicleDetailsViewModel.swift */; };
+		0CA8439A25DABFCB00838558 /* MTMapWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8439925DABFCB00838558 /* MTMapWrapperViewController.swift */; };
+		0CA843A225DAC1E700838558 /* MTNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA843A125DAC1E700838558 /* MTNavigationBar.swift */; };
+		0CA843A725DAC20800838558 /* MTGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA843A625DAC20800838558 /* MTGradientView.swift */; };
 		0CB2901825D9955A00B681AB /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB2901725D9955A00B681AB /* Map.storyboard */; };
 		0CB2902125D997BF00B681AB /* materialdesignicons-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0CB2902025D997BF00B681AB /* materialdesignicons-webfont.ttf */; };
 		0CB2902E25D99FE900B681AB /* MTMapPulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB2902D25D99FE900B681AB /* MTMapPulleyViewController.swift */; };
@@ -70,6 +81,17 @@
 		0C04EB2C25D8C5A100BD0FA8 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		0C04EB2D25D8C5A100BD0FA8 /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		0C04EB4025D8C77C00BD0FA8 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		0C07639125DADB7900EAA9F5 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		0C1441BD25D9D34300383E38 /* MTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTView.swift; sourceTree = "<group>"; };
+		0C1441C225D9D3D200383E38 /* MTButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTButton.swift; sourceTree = "<group>"; };
+		0C1441C825D9DC3F00383E38 /* MTFakeSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTFakeSelectionButton.swift; sourceTree = "<group>"; };
+		0C1441CD25D9DDED00383E38 /* MTVehicleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTVehicleDetailsViewController.swift; sourceTree = "<group>"; };
+		0C1441D325D9DE3300383E38 /* MTVehicleDetailsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTVehicleDetailsAdapter.swift; sourceTree = "<group>"; };
+		0C1441DF25D9DE8200383E38 /* MTVehicleDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTVehicleDetailsProtocol.swift; sourceTree = "<group>"; };
+		0C1441E825D9DEE700383E38 /* MTVehicleDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTVehicleDetailsViewModel.swift; sourceTree = "<group>"; };
+		0CA8439925DABFCB00838558 /* MTMapWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMapWrapperViewController.swift; sourceTree = "<group>"; };
+		0CA843A125DAC1E700838558 /* MTNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTNavigationBar.swift; sourceTree = "<group>"; };
+		0CA843A625DAC20800838558 /* MTGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGradientView.swift; sourceTree = "<group>"; };
 		0CB2901725D9955A00B681AB /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0CB2902025D997BF00B681AB /* materialdesignicons-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "materialdesignicons-webfont.ttf"; sourceTree = "<group>"; };
 		0CB2902D25D99FE900B681AB /* MTMapPulleyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMapPulleyViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +164,8 @@
 		0C04EAF125D8C17200BD0FA8 /* MyTaxi */ = {
 			isa = PBXGroup;
 			children = (
+				0C1441C725D9DC2F00383E38 /* Components */,
+				0C1441BC25D9D33700383E38 /* Extensions */,
 				0C04EB3F25D8C73900BD0FA8 /* Model */,
 				0C04EB3B25D8C6C200BD0FA8 /* Supporting */,
 				0C04EB3A25D8C6AB00BD0FA8 /* Resources */,
@@ -202,8 +226,9 @@
 		0C04EB3725D8C64800BD0FA8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0CA8439725DABFB600838558 /* MapWrapper */,
 				0CB2902B25D99FCE00B681AB /* Map */,
-				0C04EB6025D95BC600BD0FA8 /* VehicleList */,
+				0C04EB6025D95BC600BD0FA8 /* VehicleDetails */,
 				0C04EB3825D8C65100BD0FA8 /* AppDelegate */,
 			);
 			path = Scenes;
@@ -248,21 +273,86 @@
 			isa = PBXGroup;
 			children = (
 				0C04EB4025D8C77C00BD0FA8 /* Vehicle.swift */,
+				0C07639125DADB7900EAA9F5 /* Coordinate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0C04EB6025D95BC600BD0FA8 /* VehicleList */ = {
+		0C04EB6025D95BC600BD0FA8 /* VehicleDetails */ = {
 			isa = PBXGroup;
 			children = (
+				0CB2905225D9C65300B681AB /* Cell */,
+				0C1441E725D9DEDA00383E38 /* ViewModel */,
+				0C1441DE25D9DE7600383E38 /* Protocols */,
+				0C1441D225D9DE1C00383E38 /* Adapter */,
 				0C04EB6125D95BE200BD0FA8 /* View */,
 			);
-			path = VehicleList;
+			path = VehicleDetails;
 			sourceTree = "<group>";
 		};
 		0C04EB6125D95BE200BD0FA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C1441CD25D9DDED00383E38 /* MTVehicleDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C1441BC25D9D33700383E38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0C1441C725D9DC2F00383E38 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0C1441BD25D9D34300383E38 /* MTView.swift */,
+				0C1441C225D9D3D200383E38 /* MTButton.swift */,
+				0C1441C825D9DC3F00383E38 /* MTFakeSelectionButton.swift */,
+				0CA843A125DAC1E700838558 /* MTNavigationBar.swift */,
+				0CA843A625DAC20800838558 /* MTGradientView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0C1441D225D9DE1C00383E38 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				0C1441D325D9DE3300383E38 /* MTVehicleDetailsAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		0C1441DE25D9DE7600383E38 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0C1441DF25D9DE8200383E38 /* MTVehicleDetailsProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0C1441E725D9DEDA00383E38 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C1441E825D9DEE700383E38 /* MTVehicleDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0CA8439725DABFB600838558 /* MapWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				0CA8439825DABFBD00838558 /* View */,
+			);
+			path = MapWrapper;
+			sourceTree = "<group>";
+		};
+		0CA8439825DABFBD00838558 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CA8439925DABFCB00838558 /* MTMapWrapperViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,7 +368,6 @@
 		0CB2902B25D99FCE00B681AB /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				0CB2905225D9C65300B681AB /* Cell */,
 				0CB2904925D9AC2F00B681AB /* ViewModel */,
 				0CB2904025D9A1E900B681AB /* Protocols */,
 				0CB2903725D9A0A700B681AB /* Adapter */,
@@ -594,15 +683,26 @@
 				0C04EB3125D8C5A100BD0FA8 /* ApiError.swift in Sources */,
 				0CB2903325D9A06B00B681AB /* MTMapViewController.swift in Sources */,
 				0C04EAF725D8C17200BD0FA8 /* ViewController.swift in Sources */,
+				0C1441BE25D9D34300383E38 /* MTView.swift in Sources */,
 				0C04EB3225D8C5A100BD0FA8 /* ApiClient.swift in Sources */,
 				0C04EB3325D8C5A100BD0FA8 /* ApiRouter.swift in Sources */,
+				0C1441CE25D9DDED00383E38 /* MTVehicleDetailsViewController.swift in Sources */,
+				0CA843A725DAC20800838558 /* MTGradientView.swift in Sources */,
+				0C1441C925D9DC3F00383E38 /* MTFakeSelectionButton.swift in Sources */,
+				0C07639225DADB7900EAA9F5 /* Coordinate.swift in Sources */,
 				0CB2903925D9A0DE00B681AB /* MTMapAdapter.swift in Sources */,
 				0CB2905425D9C66900B681AB /* MTVehicleTableViewCell.swift in Sources */,
 				0C04EAF325D8C17200BD0FA8 /* AppDelegate.swift in Sources */,
+				0C1441E925D9DEE700383E38 /* MTVehicleDetailsViewModel.swift in Sources */,
 				0C04EB2E25D8C5A100BD0FA8 /* VehicleService.swift in Sources */,
 				0C04EAF525D8C17200BD0FA8 /* SceneDelegate.swift in Sources */,
+				0CA843A225DAC1E700838558 /* MTNavigationBar.swift in Sources */,
 				0CB2904225D9A1F900B681AB /* MTMapProtocol.swift in Sources */,
 				0CB2904B25D9AC8600B681AB /* MTVehicleListViewModel.swift in Sources */,
+				0C1441C325D9D3D200383E38 /* MTButton.swift in Sources */,
+				0C1441E025D9DE8200383E38 /* MTVehicleDetailsProtocol.swift in Sources */,
+				0CA8439A25DABFCB00838558 /* MTMapWrapperViewController.swift in Sources */,
+				0C1441D425D9DE3300383E38 /* MTVehicleDetailsAdapter.swift in Sources */,
 				0CB2902E25D99FE900B681AB /* MTMapPulleyViewController.swift in Sources */,
 				0C04EB4125D8C77C00BD0FA8 /* Vehicle.swift in Sources */,
 				0C04EB3025D8C5A100BD0FA8 /* Constants.swift in Sources */,

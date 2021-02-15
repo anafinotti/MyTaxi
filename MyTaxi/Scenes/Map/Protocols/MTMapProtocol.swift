@@ -8,6 +8,6 @@
 import Foundation
 
 protocol MTMapProtocol {
-    
-    
+        
+    func loadVehicleList(lat1: Double, long1: Double, lat2: Double, long2: Double)
 }
